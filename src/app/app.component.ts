@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "./header/header.component";
-import {StatusComponent} from "./status/status.component";
-import {TraficComponent} from "./trafic/trafic.component";
-import {TicketsComponent} from "./tickets/tickets.component";
+import {StatusComponent} from "./dashboard/status/status.component";
+import {TraficComponent} from "./dashboard/trafic/trafic.component";
+import {TicketsComponent} from "./dashboard/tickets/tickets.component";
+import {DashboardItemComponent} from "./dashboard/dashboard-item/dashboard-item.component";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import {TicketsComponent} from "./tickets/tickets.component";
     HeaderComponent,
     StatusComponent,
     TraficComponent,
-    TicketsComponent
+    TicketsComponent,
+    DashboardItemComponent
   ]
 })
 export class AppComponent {
