@@ -16,7 +16,8 @@ import {FormsModule} from "@angular/forms";
 })
 export class NewTicketComponent {
 
-  onSubmit(){
+  onSubmit(titleInput: string, descriptionInput: string){
+    console.log('ticket title : '+titleInput+', description : '+descriptionInput);
   }
 
 }
