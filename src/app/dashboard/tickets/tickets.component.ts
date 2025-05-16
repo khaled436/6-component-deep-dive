@@ -15,4 +15,14 @@ export class TicketsComponent {
 
   tickets: Ticket[] = []
 
+  onAdd(ticketdata: { title: string; text: string; }) {
+    const ticket: Ticket = {
+      title: ticketdata.title,
+      request: ticketdata.text,
+      id: Math.random().toString(),
+      status: "open"
+    }
+
+    this.tickets.push(ticket);
+  }
 }
