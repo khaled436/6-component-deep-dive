@@ -16,14 +16,18 @@ import {FormsModule} from "@angular/forms";
 })
 export class NewTicketComponent {
 
-  //@ViewChild('form') form?: ElementRef<HTMLFormElement>;
   private form = viewChild.required<ElementRef<HTMLFormElement>>("form");
 
   add = output<{title: string; text: string}>();
 
-  onSubmit(titleInput: string, descriptionInput: string){
-    this.add.emit({title:titleInput, text:descriptionInput});
-    this.form()?.nativeElement.reset();
+  enteredTitle = '';
+  enteredText = '';
+
+  onSubmit(){
+    this.add.emit({title:this.enteredTitle, text:this.enteredText });
+    // this.form()?.nativeElement.reset();
+    this.enteredText='';
+    this.enteredTitle='';
   }
 
 }
