@@ -1,4 +1,4 @@
-import {Component, input, signal} from '@angular/core';
+import {Component, input, output, signal} from '@angular/core';
 import {Ticket} from "../ticket.model";
 
 @Component({
@@ -11,8 +11,13 @@ import {Ticket} from "../ticket.model";
 export class TicketComponent {
   data = input.required<Ticket>();
   areDetailsVisible = signal(false);
+  closeTicket = output();
 
   onToggleDetails(){
     this.areDetailsVisible.update((wasVisible)=> !wasVisible);
+  }
+
+  onMarkedAsCompleted(){
+    this.closeTicket.emit();
   }
 }
